@@ -18,7 +18,7 @@ public class SplitwiseController {
 
     public ResponseDto settleGroup(RequestDto requestDto) {
         ResponseDto response = new ResponseDto();
-        int groupId = requestDto.getGroupId();
+        Long groupId = requestDto.getGroupId();
         try {
             List<Settlement> settlements = service.getSettlements(groupId);
             response.setSettlements(settlements);

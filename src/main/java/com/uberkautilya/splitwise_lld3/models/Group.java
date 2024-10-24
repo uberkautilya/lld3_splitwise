@@ -9,15 +9,15 @@ import lombok.Setter;
 
 import java.util.List;
 
-@Entity(name = "groups")
+@Entity(name = "user_groups")
 @Getter
 @Setter
 public class Group extends BaseEntity {
-    String name;
+    private String name;
     @ManyToMany
-    List<User> members;
+    private List<User> members;
     @ManyToOne
-    User admin;
+    private User admin;
     @OneToMany(mappedBy = "group")
-    List<Expense> expenses;
+    private List<Expense> expenses;
 }

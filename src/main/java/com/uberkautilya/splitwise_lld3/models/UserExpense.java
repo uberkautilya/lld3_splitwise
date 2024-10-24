@@ -12,12 +12,12 @@ import lombok.Setter;
 @Setter
 @Entity
 public class UserExpense extends BaseEntity {
+    @ManyToOne
+    private User user;
+    @ManyToOne
+    private Expense expense;
+    private Double amount;
     @Enumerated(EnumType.STRING)
-    UserExpenseType type;
-    Double amount;
-    @ManyToOne
-    User user;
-    @ManyToOne
-    Expense expense;
+    private UserExpenseType type;
 }
 

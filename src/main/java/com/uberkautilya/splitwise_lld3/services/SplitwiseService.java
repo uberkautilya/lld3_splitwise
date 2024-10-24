@@ -18,7 +18,7 @@ public class SplitwiseService {
         this.groupRepository = groupRepository;
     }
 
-    public List<Settlement> getSettlements(int groupId) throws NoSuchGroupException {
+    public List<Settlement> getSettlements(Long groupId) throws NoSuchGroupException {
         Group group = groupRepository.findById(groupId).orElseThrow(NoSuchGroupException::new);
         List<Expense> expenses = group.getExpenses();
         return algorithm.settle(expenses);
